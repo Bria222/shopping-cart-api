@@ -17,23 +17,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  user: postgres
-  host: localhost
-  password: brian
-  port: 5432
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: cimeza_backend_API_development
+  database: railwayapp_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: cimeza_backend_API
+  #username: railwayapp
 
   # The password associated with the postgres role (username).
   #password:
@@ -61,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: cimeza_backend_API_test
+  database: railwayapp_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,20 +79,9 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-# production:
-#   <<: *default
-#   url: <%= ENV['DATABASE_URL'] %>
-#   database: cimeza_backend_API_production
-#   username: cimeza_backend_API
-#   password: <%= ENV["CIMEZA_BACKEND_API_DATABASE_PASSWORD"] %>
-
-
-
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  database: cimeza_backend_API_production
-  username: cimeza_backend_API
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-
- 
+  url: <%= ENV["DATABASE_URL"] %>
+  database: railwayapp_production
+  username: railwayapp
+  password: <%= ENV["RAILWAYAPP_DATABASE_PASSWORD"] %>
