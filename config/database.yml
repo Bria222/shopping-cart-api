@@ -83,8 +83,20 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   url: <%= ENV['DATABASE_URL'] %>
+#   database: cimeza_backend_API_production
+#   username: cimeza_backend_API
+#   password: <%= ENV["CIMEZA_BACKEND_API_DATABASE_PASSWORD"] %>
+
+
+
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: cimeza_backend_API_production
   username: cimeza_backend_API
-  password: <%= ENV["CIMEZA_BACKEND_API_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+ 
