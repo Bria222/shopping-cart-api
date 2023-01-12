@@ -173,6 +173,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   bootsnap
+  bundler (~> 2.1, >= 2.1.4)
   debug
   image_processing (~> 1.2)
   pg (~> 1.1)
