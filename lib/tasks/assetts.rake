@@ -3,3 +3,4 @@ Rake::Task["assets:precompile"].clear
      task 'precompile' do
      puts "Not pre-compiling assets..."
    end
+end
